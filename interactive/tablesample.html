@@ -7,7 +7,7 @@
     <form>
         <span>
       Funding: <span id = 'funding'> </span>
-        <input type="range" name="points" step="1" id="slider-time" oninput="change_year(this.value)"> <span id='max_year'> </span>
+        <input type="range" name="points" step="1" id="slider-time" oninput="change_year(this.value)"> <span id='max_funding'> </span>
         </span>
         <div>
             <span>
@@ -35,8 +35,8 @@
         var tbody;
 
         var current = 1995;
-        var min_year;
-        var max_year;
+        var min_funding = 0;
+        var max_funding = "$2,000,000";
         var original_data;
         var year_data = [];
         var aggregated_data = [];
@@ -57,14 +57,14 @@
             }
 
 
-            min_year = d3.min(allYears)
+            // min_funding = d3.min(allYears)
 
-            d3.select("#min_year").append("span").html(min_year)
-            d3.select("#slider-time").attr("min", min_year)
-            d3.select("#slider-time").attr("value", min_year)
-            max_year = d3.max(allYears)
-            d3.select("#max_year").append("span").html(max_year)
-            d3.select("#slider-time").attr("max", max_year)
+            d3.select("#funding").append("span").html(min_funding)
+            d3.select("#slider-time").attr("min", min_funding)
+            d3.select("#slider-time").attr("value", min_funding)
+            // max_funding = d3.max(allYears)
+            d3.select("#max_funding").append("span").html(max_funding)
+            d3.select("#slider-time").attr("max", max_funding)
         })
 
         function update_table() {
