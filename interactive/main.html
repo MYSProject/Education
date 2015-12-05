@@ -9,7 +9,8 @@
 <script  src="js/jquery.js"></script>
 <script  src="js/colResizable-1.5.min.js"></script>  
 <link rel="stylesheet" type="text/css" href="css/main.css" /> 
-
+<!-- <link href='http://fonts.googleapis.com/css?family=Oleo+Script' rel='stylesheet' type='text/css'> -->
+<link href='http://fonts.googleapis.com/css?family=Merienda+One' rel='stylesheet' type='text/css'>
 <!-- <script src="js/mapvis.js">
 <script src="js/uservis.js"></script> 
  <!-- --> 
@@ -87,39 +88,68 @@
             padding: 0;
         }
         
+    
         html body #whole {
             width: 100%;
             height: 100%;
             margin-left: 0;
             padding: 0;
-            position: absolute;
+            position: relative;
             top: 90px;
             left: 10px;
             background-color: rgba(0, 0, 0, 0);
         }
-        
+        /*.resizable_img {
+    position: relative; // needed for z-index to work
+    width: 120%;
+    height: auto; // will resize image proportionally
+
+}
+*/
+.resizable_img {
+    position: absolute;
+    top: 110px;
+    left: 50px;
+    /*width: 90%;*/
+    width: 1700px;
+    /*height: 140%;*/
+    height: 1000px;
+    z-index: -1; // place image on top
+}
+
+.img_container {
+    width: 25%;
+    position: relative;
+    overflow: visible; // stops images being shifted 
+    float:left;
+}
         .header {
             position: absolute;
             top: 5px;
             left: 50px;
             font: 50px sans-serif;
             font-weight: bold;
+                        /*font: 400 30px/1.2 'Merienda One', Helvetica, sans-serif;*/
+
         }
         
         .fundingslider {
             /*stroke-width: 'red';*/
+
 /*            width: 20%;
             height: 100%;*/
-            position: absolute;
+            position: relative;
             top: 120px;
             left: 50px;
             font: 30px sans-serif;
             /*font-weight: bold;*/
+                                    font: 400 30px/1.2 'Merienda One', Helvetica, sans-serif;
+
         }
         
         .fundingvalue {
             /*stroke-width: 'red';*/
-            position: absolute;
+            position: relative;
             top: 170px;
             left: 50px;
             font: 30px sans-serif;
@@ -128,7 +158,7 @@
         
         .classize {
             /*stroke-width: 'red';*/
-            position: absolute;
+            position: relative;
             top: 220px;
             left: 50px;
             font: 30px sans-serif;
@@ -137,8 +167,8 @@
         
         .safety {
             /*stroke-width: 'red';*/
-            position: absolute;
-            top: 270px;
+            position: relative;
+            top: 230px;
             left: 50px;
             font: 30px sans-serif;
             /*font-weight: bold;*/
@@ -146,8 +176,8 @@
         
         .safetyvalue {
             /*stroke-width: 'red';*/
-            position: absolute;
-            top: 320px;
+            position: relative;
+            top: 250px;
             left: 50px;
             font: 30px sans-serif;
             /*font-weight: bold;*/
@@ -155,23 +185,23 @@
         
         .gender {
             /*stroke-width: 'red';*/
-            position: absolute;
-            top: 370px;
+            position: relative;
+            top: 450px;
             left: 50px;
             font: 30px sans-serif;
             /*font-weight: bold;*/
         }
         .gendervalue {
             /*stroke-width: 'red';*/
-            position: absolute;
-            top: 420px;
+            position: relative;
+            top: 490px;
             left: 50px;
             font: 30px sans-serif;
             /*font-weight: bold;*/
         }
         .finalscore {
             /*stroke-width: 'red';*/
-            position: absolute;
+            position: relative;
             top: 700px;
             left: 50px;
             font: 30px sans-serif;
@@ -181,52 +211,80 @@
       
         #pieVis{
             position: absolute;
-            top: 150px;
-            left: 850px;
+            top: 650px;
+            left: 1100px;
             font: 30px sans-serif;
+            /*color: "white";*/
             /*font-weight: bold;*/
 
         }
 
          #demogVis{
             position: absolute;
-            top: 150px;
-            left: 1300px;
+            
+            top: 320px;
+            left: 1100px;
+            font: 30px sans-serif;
             font: 30px sans-serif;
             /*font-weight: bold;*/
 
         }
-        .center{
+       /* .center{
             position: absolute;
             top: 370px;
             left: 50px;
             font: 30px sans-serif;
             width: 0px;
             height: 0px;
-        }
+        }*/
         #demogtext{
             position: relative;
-            top: 0px;
-            left: 0px;
+            top: 140px;
+            /*left: 0px;*/
+            left:50px;
             font: 30px sans-serif;
             width: 1500px;
             height: 20px;
         }
         #slider{
             position: relative;
-            top: 0px;
-            left: 0px;
+            top: 140px;
+            left: 50px;
             font: 30px sans-serif;
-            width: 1500px;
-            height: 0px;
+            /*width: 1500px;*/
+            /*height: 0px;*/
         }
         #slidertext{
             position: relative;
-            top: 30px;
-            left: 0px;
+            top: 140px;
+            left: 50px;
             font: 30px sans-serif;
+
             width: 1500px;
             height: 20px;
+            font: 400 30px/1.2 'Merienda One', Helvetica, sans-serif;
+  /*color: rgba(0,0,0,0.7);*/
+  /*text-shadow: 3px 3px 3px #fff;*/
+                        /*font: 400 30px/1.3 'Lobster Two', Helvetica, sans-serif;*/
+
+             /*text-align: center;*/
+        }
+        #alltext{
+            position: absolute;
+            top: 50px;
+            color: white;
+            left: 100px;
+            /*font: 30px sans-serif;*/
+            /*font-style: white;*/
+            width: 1500px;
+            height: 20px;
+            float:left;
+            text-align: left;
+            /*font: 400 30px/1.2 'Merienda One', Helvetica, sans-serif;*/
+
+            /*font: 400 100px/1.3 'Lobster Two', Helvetica, sans-serif;*/
+  /*color: #2b2b2b;*/
+  /*text-shadow: 1px 1px 0px #ededed, 4px 4px 0px rgba(0,0,0,0.15);*/
         }
     </style>
 </head>
@@ -234,13 +292,14 @@
 <body>
 
 
-
+    
     <div class="header">
         <p float="left">
             Interactive Tool: Informing Educational Policy Reform
         </p>
 
     </div>
+    <div id = "alltext">
     <form>
         <span class="fundingslider">
       Funding: <span id = 'funding'> </span>
@@ -292,7 +351,7 @@
             </select> -->
     </div>
     
-    <span class="center" width = "1500px">
+    <!-- <span class="center" width = "1500px"> -->
         <br/><br/>
         <p id = "demogtext"> Select Hispanic, Black, White, & Other %: </p>
         <div id="slider">
@@ -310,7 +369,7 @@
         
         <br/><br/>
 
-    </span>  
+    <!-- </span>   -->
         
     <div id="pieVis">
 
@@ -318,6 +377,17 @@
      <div id="demogVis">
 
     </div>
+    
+    </div>
+    <div id = "blackboard">
+       <!-- CITATION: http://stackoverflow.com/questions/13161339/how-to-make-an-image-x-bigger-in-javascript-with-jquery -->
+   <!--      <div class="contents">
+    <div class="img_container"> -->
+        <img class="resizable_img" src="img/blackboard.png">
+    <!-- </div> -->
+</div>
+    
+
 
     <!--  <div id="day">
         <form>
@@ -426,6 +496,18 @@
             // d3.select("#slider-time").attr("max", max_funding)
             // d3.select("#safetyvalue").append("span").html(crimenumber)
             d3.select("#gendervalue").append("span").html(femalepercent)
+            // var img = new Image();
+            // // var div = document.getElementById('blackboard');
+
+            // img.onload = function() {
+            //     d3.select("#blackboard").append(img);
+            // // };
+            // var img = document.createElement("img");
+            // // img.src = "http://www.google.com/intl/en_com/images/logo_plain.png";
+            // img.src = 'img/blackboard.png'
+
+            // var src = document.getElementById("blackboard");
+            // src.appendChild(img);
             
             update_gendervis()
             update_demogvis(ranges)
@@ -525,9 +607,10 @@
 
     var secondsvg = d3.select(".secondsvg").append("text")
         .text("Gender Distribution")
+        .style("fill", "white")
         .attr("class", "text")
         .attr("transform", "translate(" + 10 + ", " + 300 + ")")
-        .style("fill", "black")
+        // .style("fill", "black")
 
     hovers.append("path")
         .attr("d", hover)
@@ -592,8 +675,10 @@
     legend.append('text')
         .attr('x', legendrect + spacing)
         .attr('y', legendrect)
+        .style("fill", "white")
         .text(function(d, i) {
             return labels[i];
+
         })
        
     this.svg = d3.select("#pieVis").select("svg");
@@ -644,7 +729,7 @@ function update_demogvis(value){
         .attr("class", "demogBrushAvg thirdsvg")
         .attr("transform", "translate(" + 900 + ", " + 900 + ")")
          .attr("width", 600)
-        .attr("height", 500)
+        .attr("height", 300)
 
     var hovernews = newsvg.selectAll("g.hovernew")
         .data(dpie(value))
@@ -659,8 +744,8 @@ function update_demogvis(value){
     var thirdsvg = d3.select(".thirdsvg").append("text")
         .text("Demographic Distribution")
         .attr("class", "text")
-        .attr("transform", "translate(" + 10 + ", " + 300 + ")")
-        .style("fill", "black")
+        .attr("transform", "translate(" + -10 + ", " + 300 + ")")
+        .style("fill", "white")
 
     hovernews.append("path")
         .attr("d", hovernew)
@@ -725,6 +810,7 @@ function update_demogvis(value){
     newlegend.append('text')
         .attr('x', newlegendrect + spacing)
         .attr('y', newlegendrect)
+        .style("fill", "white")
         .text(function(d, i) {
             return labels[i];
         })
