@@ -345,6 +345,7 @@
             sizes = []
             intercept = original_data["intercept"]
 
+            // Create options for class size dropdown
             for (i = 1; i <= 55; i++) {
                 sizes.push(i)
             }
@@ -592,7 +593,7 @@
 
 
         }
-
+        // create demographic visualization using exact same code as update_gendervis, just modifying the class and id's to make sure the hover connection for the legend remain bound to only this visualization
         function update_demogvis(value) {
             var newcolor = ["Yellow", "Blue", "Green", "Purple"]
             var dpie = d3.layout.pie()

@@ -26,9 +26,7 @@ After deciding to compare different types of regression models and predictive an
 
 * Which regression model best fits our data? In other words, which regression model has the lowest RMSE when trained on a sample data subset and then tested on the rest of the data?
 
-* For the best-fit regression, is there a correlation between the independent variables and school’s test scores or survey data? What is the variation among each variable?
-
-* Which combination of independent variables values results in the optimal school performance (what variables are statistically significant)?
+* We noticed female percentages of students had a high positive coefficient with math score results. Why did we notice this effect?
 
 <h2> Structure of the Project </h2>
 The code for our project is contained within two separate folders, one titled Data Analysis and one titled Interactive Tool. The Data Analysis folder contains all of the code related to data scraping, cleaning, and analysis. Meanwhile, the Interactive Tool folder contains all of the code used to develop a webpage where users could manipulate variables to see what our linear regression model would predict the resulting math and survey scores would be.
