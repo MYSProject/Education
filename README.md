@@ -16,7 +16,7 @@ While searching for data on this subject matter, we came across a project design
 <h2> Initial Questions and Project Focus Development </h2>
 Based on accessible data, we decided to investigate seven independent variables including school type (i.e. charter vs. public), class size, demographic breakdown (i.e. race and gender), school safety (i.e. crime rates in surrounding areas) and funding. The dependent variables included math test scores and survey data (i.e. evaluations of school performances by teachers, students, and parents). Given these variables, our initial goal was to answer the following questions:
 
-<ul>How do the different independent variables interact (ex. what is the interaction between funding and class size)?</ul>
+* How do the different independent variables interact (ex. what is the interaction between funding and class size)?
 
 Do the independent variables have a different correlation with the subjective and objective dependent variables? In other words, do high test scores correspond with positive survey results in the same schools?
 
