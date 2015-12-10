@@ -33,6 +33,10 @@ The code for our project is contained within two separate folders, one titled Da
 
 	http://udolfsamantha.wix.com/education
 
+Moreover, the video summarizing our project can be found here:
+
+	https://www.youtube.com/watch?v=DijSx4qP8oE
+
 <h3> Data Analysis </h3>
 The Data Analysis folder contains 4 ipython notebooks that should be opened in the following order. First, MergeFiles.ipynb contains all of the code that cleans data imported from CSV’s downloaded straight from websites (all of our sources are listed at the bottom of this README. Second, MergeFiles references GetFunding.ipynb, which scrapes data regarding funding information for each school. These two files represent the two parts of our data collection process. Third, Predictions_Inference_Visualizations.ipynb contains our exploratory analysis and our final analysis. Hence it contains the regression models we tested, initial visualizations and analysis, and a conclusions we drew from our models to answer all of our initial questions. Finally, Visualizations_for_the_Web.ipynb contains a few more visualizations that we created specifically for our website.
 
