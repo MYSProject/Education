@@ -52,5 +52,6 @@ Downloaded and Cleaned:
 * Safety data: https://data.cityofnewyork.us/Education/School-Safety-Report/qybk-bjjc 
 
 Scraping:
+
 *Funding: http://schools.nyc.gov/AboutUs/funding/schoolbudgets/default.htm
 
