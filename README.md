@@ -53,5 +53,5 @@ Downloaded and Cleaned:
 
 Scraping:
 
-*Funding: http://schools.nyc.gov/AboutUs/funding/schoolbudgets/default.htm
+* Funding: http://schools.nyc.gov/AboutUs/funding/schoolbudgets/default.htm
 
