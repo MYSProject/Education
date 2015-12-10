@@ -1,4 +1,4 @@
-<h1>Discrepancies Between Subjective and Objective Evaluations of NYC School Performance</h1>
+<h1>Study of Factors that Enhance Performance in NYC DOE Schools</h1>
 By: Michelle Choi, Yichen Guan, and Samantha Udolf
 
 <h2> Overview and Motivation </h2>
