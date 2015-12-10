@@ -18,16 +18,38 @@ Based on accessible data, we decided to investigate seven independent variables 
 
 * How do the different independent variables interact (ex. what is the interaction between funding and class size)?
 
-Do the independent variables have a different correlation with the subjective and objective dependent variables? In other words, do high test scores correspond with positive survey results in the same schools?
+* Do the independent variables have a different correlation with the subjective and objective dependent variables? In other words, do high test scores correspond with positive survey results in the same schools?
 
-Which independent variables have the largest effect on each of the dependent variables? How should policymakers prioritize reforms aimed at influencing each of these independent variables?
+* Which independent variables have the largest effect on each of the dependent variables? How should policymakers prioritize reforms aimed at influencing each of these independent variables?
 
 After deciding to compare different types of regression models and predictive analysis in our final report, we also decided to investigate the following questions:
 
-Which regression model best fits our data? In other words, which regression model has the lowest RMSE when trained on a sample data subset and then tested on the rest of the data?
+* Which regression model best fits our data? In other words, which regression model has the lowest RMSE when trained on a sample data subset and then tested on the rest of the data?
 
-For the best-fit regression, is there a correlation between the independent variables and school’s test scores or survey data? What is the variation among each variable?
+* For the best-fit regression, is there a correlation between the independent variables and school’s test scores or survey data? What is the variation among each variable?
 
-Which combination of independent variables values results in the optimal school performance (what variables are statistically significant)?
+* Which combination of independent variables values results in the optimal school performance (what variables are statistically significant)?
 
 <h2> Structure of the Project </h2>
+The code for our project is contained within two separate folders, one titled Data Analysis and one titled Interactive Tool. The Data Analysis folder contains all of the code related to data scraping, cleaning, and analysis. Meanwhile, the Interactive Tool folder contains all of the code used to develop a webpage where users could manipulate variables to see what our linear regression model would predict the resulting math and survey scores would be.
+
+<h3> Data Analysis </h3>
+The Data Analysis folder contains 4 ipython notebooks that should be opened in the following order. First, MergeFiles.ipynb contains all of the code that cleans data imported from CSV’s downloaded straight from websites (all of our sources are listed at the bottom of this README. Second, MergeFiles references GetFunding.ipynb, which scrapes data regarding funding information for each school. These two files represent the two parts of our data collection process. Third, Predictions_Inference_Visualizations.ipynb contains our exploratory analysis and our final analysis. Hence it contains the regression models we tested, initial visualizations and analysis, and a conclusions we drew from our models to answer all of our initial questions. Finally, Visualizations_for_the_Web.ipynb contains a few more visualizations that we created specifically for our website.
+
+
+<h3> Interactive Tool Folder</h3>
+Within the Interactive Tool folder, index.html contains the code used to create the tool. It links to 2 important scripts that are hosted within the js file of the folder. First, it links to js/colResizable-1.5.min.js, which contains the code to generate the multipoint slider used for the demographic analysis. This code was adapted from http://www.bacubacu.com/colresizable/#samples. The script for this code is written within the header, starting on line 25. Second, it links to a js file called js/my_first_tour.js, which also relies on code from js/hopscotch.js to generate the informational tour upon opening the page. Code for these files was adapted from https://github.com/linkedin/hopscotch, modified to create a tour that matched the needs of our page.The next portion of the code contains CSS elements that were used to layout the page and create the blackboard background. Other css elements and images specific to hopscotch and the slider were include in the css, stylesheets, and img folders included in the Interactive Tool Folder. After setting up these CSS elements, we created the html elements for all of the sliders and outputs. At the start of the script thereafter, we initialized variables globally so we did not have to run update functions for every variable each time any variable was changed. Then we loaded in json files that we outputted from the regressions we ran in the data analysis section, which were in the form of dictionaries keyed by variable type with values as the coefficient number. Then we created d3 selectors and html elements that would run various update functions when the user changed a variable. An update function existed for each variable, such that each time a variable was changed its global variable value would be altered and then an update_score() function would be called. This update score function would run 2 equations, each of which used the coefficients loaded in from the regressions of either the survey or math data, and output a predicted score based on the linear model created using our regression coefficients.Next, two interactive visualizations were created in the update_demogvis() and update_gendervis() functions, which each would be called when the appropriate sliders were changed. These functions took the updated percentage breakdowns as inputs, and would generate pie visualizations matching these percentages. Finally, each visualization used “mouse on” and “mouse out” events to create an effect where corresponding pie elements would be highlighted if their legend element was highlighted. This process was executed by attributing identical id’s to corresponding legend and pie elements, such that when an element was moused over, all other elements within that visualization would greatly decrease in opacity such that only the element of interest remained. 
+
+Finally, we had problems creating a github page within our project repository that could then be converted into a publicly accessible github page. Hence we created a github page on a separate repository that we used to generate the github page:	https://github.com/mchoi4194/mchoi4194.github.ioTo keep all of our code in a centralized location, we simply copied the exact final code from that repository into the Interactive Tool folder within our project repository even though the repository that is actually connected to the http://mchoi4194.github.io/ page is the one listed above. In other words, the code within our project repository is exactly the same as the one used to generate the interactive tool, it just is not actually the repository connected to the generated page.
+
+<h2> Sources </h2>
+Downloaded and Cleaned:
+* Charter School Math Scores: https://data.cityofnewyork.us/Education/Math-Test-Results-2006-2012-Charter-Schools/43qc-8vv8
+* Public School Math Scores: https://data.cityofnewyork.us/Education/Math-Test-Results-2006-2012-School-All-Students/3mrr-8h5c
+* Class Size: https://data.cityofnewyork.us/Education/2010-2011-Class-Size-School-level-detail/urz7-pzb3 
+* Demographic:http://schools.nyc.gov/Accountability/data/default.htm (Demographic Snapshots link).
+* Survey data: https://data.cityofnewyork.us/Education/NYC-School-Survey-2011/mnz3-dyi8 
+* Safety data: https://data.cityofnewyork.us/Education/School-Safety-Report/qybk-bjjc 
+Scraping:
+*Funding: http://schools.nyc.gov/AboutUs/funding/schoolbudgets/default.htm
+
